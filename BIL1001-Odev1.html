@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>2014280041 Mert Çalışkanyürek</title>
+</head>
+
 <body>
-<h2>2019 G�z D�neminin ilk �devi</h2>
-<label for="id1">Metin kutusu 1</label>
-<input type='text' id='id1' /> 
-<br>
-<label for="id2">Metin kutusu 2</label>
-<input type='text' id='id2' /> 
-<br><br>
-<button type="button">Topla</button>
-<br><br>
-<label for="id3">Metin kutusu 3</label>
-<input type='text' id='id3' /> 
-<br>
-<label for="id4">Metin kutusu 4</label>
-<input type='text' id='id4' /> 
-<br><br>
-<button type="button">Yap��t�r</button>
+    <p>2014280041 Mert Çalışkanyürek</p>
+    <h2>2019 Güz Döneminin ilk ödevi</h2>
+    <label for="id1">Metin kutusu 1</label>
+    <input type='text' id='id1' />
+    <br>
+    <label for="id2">Metin kutusu 2</label>
+    <input type='text' id='id2' />
+    <br>
+    <br>
+    <button type="button" id='btn_topla'>Topla</button>
+    <br>
+    <br>
+    <label for="id3">Metin kutusu 3</label>
+    <input type='text' id='id3' />
+    <br>
+    <label for="id4">Metin kutusu 4</label>
+    <input type='text' id='id4' />
+    <br>
+    <br>
+    <button type="button" id="btn_yapistir">Yapıştır</button>
+    <script>
+        $(document).ready(function() {
+            $("#btn_topla").click(function() {
+                let id1Value = $("#id1").val();
+                let id2Value = $("#id2").val();
+
+                if ($.isNumeric(id1Value) && $.isNumeric(id2Value))
+                    alert('Toplam: ' + (parseInt(id1Value) + parseInt(id2Value)));
+                else
+                    alert('Girdiğiniz Değerler Numerik Değil');
+            });
+
+            $("#btn_yapistir").click(function() {
+                let id3Value = $("#id3").val();
+                let id4Value = $("#id4").val();
+
+                alert(id3Value + ' ' + id4Value);
+            });
+        });
+    </script>
 </body>
+
 </html>
